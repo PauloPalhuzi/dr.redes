@@ -875,8 +875,9 @@ a {
 .case3,
 .case4 {
     width: 100%;
-    height: 70vh;
+   /* height: 70vh;*/
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
 }
