@@ -464,57 +464,51 @@
                     </div>
                 </div>
 
-                <!-- SCRIPT FUNCIONAL -->
-                <script>
+        <script>
+          // Função para controlar os botões "Ver mais" em todos os casos
+          document.querySelectorAll('.ver-mais-btn').forEach(button => {
+            button.addEventListener('click', () => {
+              // Aqui pegamos o parágrafo .descricao-texto dentro do mesmo container do botão
+              const texto = button.parentElement.querySelector('.descricao-texto');
+              
+              if (!texto) return; // se não encontrar, aborta
+              
+              // Alterna a classe collapsed para expandir/recolher texto
+              texto.classList.toggle('collapsed');
+              
+              // Atualiza o texto do botão
+              if (texto.classList.contains('collapsed')) {
+                button.textContent = 'Ver mais';
+              } else {
+                button.textContent = 'Ver menos';
+              }
+            });
+          });
+        
+          // Função para envio pelo WhatsApp - está ok
+          function enviarWhats(event) {
+            event.preventDefault();
+        
+            const nome = document.getElementById("nome").value.trim();
+            const telefoneContato = document.getElementById("telefone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+        
+            const numeroDestino = "553137604960"; // <- DDI 55 + DDD + número
+        
+            if (!nome || !mensagem) {
+              alert("Por favor, preencha seu nome e a mensagem.");
+              return;
+            }
+        
+            const texto = `Olá! Me chamo ${nome}, meu telefone é ${telefoneContato}, e meu e-mail é ${email}. ${mensagem}`;
+            const textoFinal = encodeURIComponent(texto);
+            const link = `https://wa.me/${numeroDestino}?text=${textoFinal}`;
+        
+            window.open(link, "_blank");
+          }
+        </script>
 
-                 
-                  document.querySelectorAll('.ver-mais-btn').forEach(function(btn) {
-                    btn.addEventListener('click', function () {
-                      const texto = this.previousElementSibling;
-                      texto.classList.toggle('expandido');
-                
-                      if (texto.classList.contains('expandido')) {
-                        this.textContent = 'Ver menos';
-                      } else {
-                        this.textContent = 'Ver mais';
-                      }
-                    });
-                  });
-
-
-                  const buttons = document.querySelectorAll('.ver-mais-btn');
-                  const textos = document.querySelectorAll('.texto-colapsado');
-                
-                  buttons.forEach((btn, i) => {
-                    btn.addEventListener('click', () => {
-                      textos[i].classList.toggle('expandido');
-                      btn.textContent = textos[i].classList.contains('expandido') ? 'Ver menos' : 'Ver mais';
-                    });
-                  });
-
-
-                    function enviarWhats(event) {
-                        event.preventDefault();
-
-                        const nome = document.getElementById("nome").value.trim();
-                        const telefoneContato = document.getElementById("telefone").value.trim();
-                        const email = document.getElementById("email").value.trim();
-                        const mensagem = document.getElementById("mensagem").value.trim();
-
-                        const numeroDestino = "553137604960"; // <- DDI 55 + DDD + número
-
-                        if (!nome || !mensagem) {
-                            alert("Por favor, preencha seu nome e a mensagem.");
-                            return;
-                        }
-
-                        const texto = `Olá! Me chamo ${nome}, meu telefone é ${telefoneContato}, e meu e-mail é ${email}. ${mensagem}`;
-                        const textoFinal = encodeURIComponent(texto);
-                        const link = `https://wa.me/${numeroDestino}?text=${textoFinal}`;
-
-                        window.open(link, "_blank");
-                    }
-                </script>
             </section>
 
 
