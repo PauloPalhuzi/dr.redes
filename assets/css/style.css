@@ -867,7 +867,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8rem;
+    gap: 6rem;
 }
 
 .case1,
@@ -1271,7 +1271,4 @@ a {
     color: #111;
 }
 
-.case1,
-.case3 {
-  margin-bottom: 100px;
-}
+
