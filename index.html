@@ -466,6 +466,18 @@
 
                 <!-- SCRIPT FUNCIONAL -->
                 <script>
+
+                  const buttons = document.querySelectorAll('.ver-mais-btn');
+                  const textos = document.querySelectorAll('.texto-colapsado');
+                
+                  buttons.forEach((btn, i) => {
+                    btn.addEventListener('click', () => {
+                      textos[i].classList.toggle('expandido');
+                      btn.textContent = textos[i].classList.contains('expandido') ? 'Ver menos' : 'Ver mais';
+                    });
+                  });
+
+
                     function enviarWhats(event) {
                         event.preventDefault();
 
