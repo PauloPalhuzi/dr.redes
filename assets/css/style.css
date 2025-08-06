@@ -1272,4 +1272,22 @@ a {
     color: #111;
 }
 
+.case1, .case3 {
+  flex: 1 1 45%;          /* Cada case ocupa quase metade da largura, ajusta responsivamente */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  min-width: 300px;       /* Largura mínima para não ficar muito pequeno */
+  background: #fff;       /* Fundo para facilitar a visualização */
+  padding: 1rem;
+  overflow-wrap: break-word;  /* Quebra as palavras longas para evitar overflow */
+}
+.textos-case p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.container-case::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
