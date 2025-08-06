@@ -43,7 +43,7 @@ html {
 }
 
 body {
-    background-color: var(--color-black);
+    background-color: var#3d4143;
     width: 100%;
     display: flex;
     align-items: center;
@@ -1858,4 +1858,29 @@ body {
 .descricao-texto.collapsed {
     max-height: 4.5em;
     overflow: hidden;
+}
+@media (max-width: 768px) {
+    .sobre, .contato {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+    }
+    .titulo-inicio h1, .textos-sobre h1, .conteudo-textos-case h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline-scroll {
+        animation: none;
+    }
+    .complemento-sobre img {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #whatsappButton {
+        animation: none;
+    }
 }
