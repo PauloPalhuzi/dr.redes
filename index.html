@@ -468,6 +468,21 @@
                 <!-- SCRIPT FUNCIONAL -->
                 <script>
 
+                 
+                  document.querySelectorAll('.ver-mais-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function () {
+                      const texto = this.previousElementSibling;
+                      texto.classList.toggle('expandido');
+                
+                      if (texto.classList.contains('expandido')) {
+                        this.textContent = 'Ver menos';
+                      } else {
+                        this.textContent = 'Ver mais';
+                      }
+                    });
+                  });
+
+
                   const buttons = document.querySelectorAll('.ver-mais-btn');
                   const textos = document.querySelectorAll('.texto-colapsado');
                 
