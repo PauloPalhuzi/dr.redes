@@ -1851,13 +1851,11 @@ body {
     flex: 1;
   }
 }
-.descricao-texto.collapsed {
-  max-height: 4.5em; /* altura limitada para mostrar poucas linhas */
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
 .descricao-texto {
-  max-height: 1000px; /* altura grande para expandido */
-  transition: max-height 0.3s ease;
+    max-height: 1000px;
+    transition: max-height 0.3s ease;
+}
+.descricao-texto.collapsed {
+    max-height: 4.5em;
+    overflow: hidden;
 }
